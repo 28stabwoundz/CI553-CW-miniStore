@@ -1,5 +1,6 @@
 package clients;
 
+
 import clients.backDoor.BackDoorController;
 import clients.backDoor.BackDoorModel;
 import clients.backDoor.BackDoorView;
@@ -12,6 +13,7 @@ import clients.customer.CustomerView;
 import clients.packing.PackingController;
 import clients.packing.PackingModel;
 import clients.packing.PackingView;
+import clients.budget.*;
 import middle.LocalMiddleFactory;
 import middle.MiddleFactory;
 import javax.swing.*;
@@ -40,6 +42,7 @@ class Main
   {
     //DEBUG.set(true); /* Lots of debug info */
     MiddleFactory mlf = new LocalMiddleFactory();  // Direct access
+    startBudgetGUI_MVC( mlf );
     startCustomerGUI_MVC( mlf );
     startCashierGUI_MVC( mlf );
     startCashierGUI_MVC( mlf ); // you can create multiple clients
@@ -48,9 +51,26 @@ class Main
   }
   
   /**
-  * start the Customer client, -search product
+  * start the Budget client, - input money
   * @param mlf A factory to create objects to access the stock list
   */
+  
+  public void startBudgetGUI_MVC(MiddleFactory mlf )
+  {
+	    JFrame  window = new JFrame();
+	    window.setTitle( "Budget Client MVC");
+	    window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+	    Dimension pos = PosOnScrn.getPos();
+	    
+	    BudgetModel model      = new BudgetModel(mlf);
+	    BudgetView view        = new BudgetView( window, mlf, pos.width, pos.height );
+	    BudgetController cont  = new BudgetController( model, view );
+	    view.setController( cont );
+
+	    model.addObserver( view );       // Add observer to the model, ---view is observer, model is Observable
+	    window.setVisible(true);         // start Screen
+  }
+  
   public void startCustomerGUI_MVC(MiddleFactory mlf )
   {
     JFrame  window = new JFrame();
@@ -130,5 +150,5 @@ class Main
     model.addObserver( view );       // Add observer to the model
     window.setVisible(true);         // Make window visible
   }
-  
+   
 }
