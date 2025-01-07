@@ -51,7 +51,7 @@ class Main
   }
   
   /**
-  * start the Budget client, - input money
+  * start the Budget client, - customer can input money
   * @param mlf A factory to create objects to access the stock list
   */
   

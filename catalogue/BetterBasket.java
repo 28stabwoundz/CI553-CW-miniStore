@@ -4,14 +4,20 @@ import java.io.Serializable;
 import java.util.Collections;
 
 /**
- * Write a description of class BetterBasket here.
- * 
- * @author  Your Name 
+ * BetterBasket is a better version of Basket, including a merge of the products 
+ * instead of making the list longer, which saves space and also it will sort
+ * the products by number.
+ * @author  Francesca Yaxley
  * @version 1.0
  */
 public class BetterBasket extends Basket
 {
-  @Override
+	/**
+	 * Merging the total of one product instead of adding a new line
+	 * @param pr Product client has bought
+	 * @return return if true
+	 */
+	@Override
   	public boolean add( Product pr)
   	{
 	  for(Product prInList: this) {

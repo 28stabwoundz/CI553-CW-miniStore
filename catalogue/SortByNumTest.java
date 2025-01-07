@@ -6,7 +6,11 @@ import catalogue.SortByNum;
 import org.junit.jupiter.api.Test;
 
 class SortByNumTest {
-
+	/**
+	 * A test to see if the basket will sort the products by number
+	 * @param p1 Product one in the basket
+	 * @param p2 Product two in the basket
+	 */
 	@Test
 	void testSorting() {
 		BetterBasket br = new BetterBasket();

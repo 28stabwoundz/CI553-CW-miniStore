@@ -23,7 +23,6 @@ public class BudgetView implements Observer
   private static final String DELETE = "Delete";
   private final JLabel      pageTitle  = new JLabel();
   private final JLabel      theAction  = new JLabel();
-  //private final JTextField  theInput   = new JTextField();
   SpinnerNumberModel model = new SpinnerNumberModel(0, 0, 100000, 10);
   private final JSpinner	theInputs  = new JSpinner(model);
   private final JTextField  theAmount   = new JTextField();
@@ -80,13 +79,6 @@ public class BudgetView implements Observer
     theAction.setBounds( 110, 25, 600, 20 );       // Message area
     theAction.setText( "Enter your budget below" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
-
-    /*theInput.setBounds( 110, 50, 270, 40 );         // Input Area
-    theInput.setText("Input money here");                           // Blank
-    theInput.setBackground(new java.awt.Color(225, 234, 205));
-    theInput.setForeground(Color.gray);
-    cp.add( theInput );                             //  Add to canvas
-    */
     
     theInputs.setBounds(110, 50, 270, 40);                           // Blank
     theInputs.setBackground(new java.awt.Color(225, 234, 205));

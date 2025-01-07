@@ -7,7 +7,13 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 class BetterBasketTest {
-
+	/**
+	 * Testing to make sure BetterBasket will merge products
+	 * @param p1 Product one in the test
+	 * @param p2 Product two in the test
+	 * @param p3 Product three in the test
+	 * @param p4 Product four in the test
+	 */
 	@Test
 	void testMergeAddProduct() {
 		BetterBasket br = new BetterBasket();

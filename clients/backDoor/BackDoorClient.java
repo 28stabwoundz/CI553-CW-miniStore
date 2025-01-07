@@ -8,6 +8,7 @@ import javax.swing.*;
 
 /**
  * The standalone BackDoor Client
+ * @param args
  */
 
 
@@ -27,7 +28,10 @@ public class BackDoorClient
     mrf.setOrderInfo  ( orderURL );        //
     displayGUI(mrf);                       // Create GUI
   }
-  
+  /**
+   * 
+   * @param mf
+   */
   private static void displayGUI(MiddleFactory mf)
   {     
     JFrame  window = new JFrame();

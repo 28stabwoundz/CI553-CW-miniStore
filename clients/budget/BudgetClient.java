@@ -11,7 +11,6 @@ import javax.swing.*;
  * The standalone Budget Client.
  */
 
-
 public class BudgetClient
 {
    public static void main (String args[])
@@ -21,7 +20,10 @@ public class BudgetClient
     displayGUI(mrf);                       // Create GUI
   }
 
-
+/**
+ * 
+ * @param mf
+ */
   private static void displayGUI(MiddleFactory mf)
   {     
     JFrame  window = new JFrame();

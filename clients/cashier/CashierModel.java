@@ -8,9 +8,7 @@ import middle.*;
 
 import java.util.Observable;
 
-/**
- * 
- */
+
 public class CashierModel extends Observable
 {
   public enum State { process, checked }
@@ -128,6 +126,10 @@ public class CashierModel extends Observable
     theState = State.process;                   // All Done
     setChanged(); notifyObservers(theAction);
   }
+  
+  /**
+   * Clears the basket
+   */
   
   public void doClear()
   {

@@ -25,17 +25,19 @@ public class BudgetController
 
   /**
    * Check interaction from view
-   * @param pn The product number to be checked
+   * @param theInputs Budget client has put in
    */
   public void doCheck(int theInputs )
   {
     model.doCheck(theInputs);
   }
 
-
+  /**
+   * Clearing the search
+   */
   public void doClear()
   {
-	  model.doClear();
+	  model.doClear();	//Clearing the search
   }
   
 }
