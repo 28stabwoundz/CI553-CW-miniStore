@@ -32,7 +32,7 @@ public class CustomerController
   public void doCheckByName( String name )
   {
 	  NameToNumber nameToNumber = new NameToNumber();
-	  String pn = nameToNumber.getNumberByName(nameToNumber, name);
+	  String pn = nameToNumber.getNumberFromName(nameToNumber, name);
 	  model.doCheck(pn);
   }
 

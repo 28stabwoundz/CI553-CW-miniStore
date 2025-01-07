@@ -1,6 +1,7 @@
 package clients.cashier;
 
 import catalogue.Basket;
+import catalogue.BetterBasket;
 import catalogue.Product;
 import debug.DEBUG;
 import middle.*;
@@ -8,16 +9,15 @@ import middle.*;
 import java.util.Observable;
 
 /**
- * Implements the Model of the cashier client
+ * 
  */
 public class CashierModel extends Observable
 {
-  private enum State { process, checked }
+  public enum State { process, checked }
 
   private State       theState   = State.process;   // Current state
   private Product     theProduct = null;            // Current product
   private Basket      theBasket  = null;            // Bought items
-
   private String      pn = "";                      // Product being processed
 
   private StockReadWriter theStock     = null;
@@ -54,18 +54,17 @@ public class CashierModel extends Observable
    * Check if the product is in Stock
    * @param productNum The product number
    */
-  public void doCheck(String productNum )
+  public void doCheck(String productNum, int theAmount )
   {
     String theAction = "";
     theState  = State.process;                  // State process
-    pn  = productNum.trim();                    // Product no.
-    int    amount  = 1;                         //  & quantity
+    pn  = productNum.trim();                    // Product no.                       //  & quantity
     try
     {
       if ( theStock.exists( pn ) )              // Stock Exists?
       {                                         // T
         Product pr = theStock.getDetails(pn);   //  Get details
-        if ( pr.getQuantity() >= amount )       //  In stock?
+        if ( pr.getQuantity() >= 1 && theAmount < 5 )       //  In stock? and adding a cap to the amount that can be bought
         {                                       //  T
           theAction =                           //   Display 
             String.format( "%s : %7.2f (%2d) ", //
@@ -73,11 +72,12 @@ public class CashierModel extends Observable
               pr.getPrice(),                    //    price
               pr.getQuantity() );               //    quantity     
           theProduct = pr;                      //   Remember prod.
-          theProduct.setQuantity( amount );     //    & quantity
+          theProduct.setQuantity( theAmount );     //    & quantity
           theState = State.checked;             //   OK await BUY 
         } else {                                //  F
           theAction =                           //   Not in Stock
-            pr.getDescription() +" not in stock";
+            pr.getDescription() +  " not in stock. Or you have tried to purchase more than 5 of this item.";
+          	
         }
       } else {                                  // F Stock exists
         theAction =                             //  Unknown
@@ -129,6 +129,13 @@ public class CashierModel extends Observable
     setChanged(); notifyObservers(theAction);
   }
   
+  public void doClear()
+  {
+	  String theAction = "";
+	    theBasket.clear();                        // Clear s. list
+	    theAction = "Item deleted";       // Set display                           // No picture
+	    setChanged(); notifyObservers(theAction);
+  }
   /**
    * Customer pays for the contents of the basket
    */
@@ -158,7 +165,7 @@ public class CashierModel extends Observable
   }
 
   /**
-   * ask for update of view callled at start of day
+   * ask for update of view called at start of day
    * or after system reset
    */
   public void askForUpdate()
@@ -190,9 +197,9 @@ public class CashierModel extends Observable
    * return an instance of a new Basket
    * @return an instance of a new Basket
    */
-  protected Basket makeBasket()
+  protected BetterBasket makeBasket()
   {
-    return new Basket();
+    return new BetterBasket();
   }
 }
   
