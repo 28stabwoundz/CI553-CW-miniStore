@@ -23,12 +23,12 @@ public class BetterBasket extends Basket
 	  for(Product prInList: this) {
 		  if(prInList.getProductNum().equals(pr.getProductNum())) {
 			  int quantity = pr.getQuantity()+prInList.getQuantity();
-			  prInList.setQuantity(quantity);
+			  prInList.setQuantity(quantity); //change the quantity to how many the customer has bought
 			  return (true);
 		  }
 	  }
 		  super.add(pr);
-		  Collections.sort(this, new SortByNum());
+		  Collections.sort(this, new SortByNum()); // Calling the sort function
 		  return(true);
   	}
 }
