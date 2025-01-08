@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class NameToNumber extends HashMap<String,String> {
+public class NameToNumber extends HashMap<String,String> { //creating a hashmap to convert names to number
 
 	NameToNumber(){
 		put("0001", "TV");
@@ -16,9 +16,9 @@ public class NameToNumber extends HashMap<String,String> {
 	}
 	
 	public String getNumberFromName(Map<String, String> map, String name) {
-		for (Entry<String, String> entry : map.entrySet()) {
+		for (Entry<String, String> entry : map.entrySet()) { //checks to see if any name matches the hashmap
 			if (entry.getValue().equals(name))
-				return entry.getKey();
+				return entry.getKey(); //will return the key that is equivalent to the name
 		}
 		return null;
 	}

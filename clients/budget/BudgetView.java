@@ -81,7 +81,7 @@ public class BudgetView implements Observer
     cp.add( theAction );                            //  Add to canvas
     
     theInputs.setBounds(110, 50, 270, 40);                           // Blank
-    theInputs.setBackground(new java.awt.Color(225, 234, 205));
+    theInputs.setBackground(new java.awt.Color(225, 234, 205)); // Changing the colour
     theInputs.setForeground(Color.gray);
     cp.add( theInputs );  
     
@@ -89,7 +89,7 @@ public class BudgetView implements Observer
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font
-    theOutput.setBackground(new java.awt.Color(225, 234, 205));
+    theOutput.setBackground(new java.awt.Color(225, 234, 205)); // Changing the colour
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible

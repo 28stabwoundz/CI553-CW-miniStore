@@ -60,7 +60,7 @@ public class CustomerView implements Observer
     Container cp         = rpc.getContentPane();    // Content Pane
     Container rootWindow = (Container) rpc;         // Root Window
     cp.setLayout(null);                             // No layout manager
-    cp.setBackground(new java.awt.Color(255, 204, 234));
+    cp.setBackground(new java.awt.Color(255, 204, 234)); // Changing the colour
     rootWindow.setSize( W, H );                    // Size of Window
     rootWindow.setLocation( x, y );
 
@@ -73,22 +73,22 @@ public class CustomerView implements Observer
     theBtCheck.setBounds( 16, 10+50*0, 85, 40 );    // Check button
     theBtCheck.addActionListener(                   // Call back code
       e -> cont.doCheck( theInput.getText() ) );
-    theBtCheck.setBackground(new java.awt.Color(255, 246, 227));
+    theBtCheck.setBackground(new java.awt.Color(255, 246, 227)); // Changing the colour
     theBtCheck.setOpaque(true);
     theBtCheck.setBorderPainted(false);
     cp.add( theBtCheck );                        //  Add to canvas
 
     theBtSearch.setBounds( 16, 10+50*1, 85, 40 );    // Check button
-    theBtSearch.setBackground(new java.awt.Color(255, 246, 227));
+    theBtSearch.setBackground(new java.awt.Color(255, 246, 227)); // Changing the colour
     theBtSearch.setOpaque(true);
     theBtSearch.setBorderPainted(false);
-    theBtSearch.setForeground(Color.red);
+    theBtSearch.setForeground(Color.red);	// Changing colour of the text
     theBtSearch.addActionListener(                   // Call back code
       e -> cont.doCheckByName( theInput.getText() ) );
     cp.add( theBtSearch );
     
     theBtClear.setBounds( 16, 10+50*2, 85, 40 );    // Clear button
-    theBtClear.setBackground(new java.awt.Color(255, 246, 227));
+    theBtClear.setBackground(new java.awt.Color(255, 246, 227)); // Changing the colour
     theBtClear.setOpaque(true);
     theBtClear.setBorderPainted(false);
     theBtClear.addActionListener(                   // Call back code
@@ -101,13 +101,13 @@ public class CustomerView implements Observer
 
     theInput.setBounds( 110, 50, 270, 40 );         // Product no area
     theInput.setText("");                           // Blank
-    theInput.setBackground(new java.awt.Color(255, 246, 227));
+    theInput.setBackground(new java.awt.Color(255, 246, 227)); // Changing the colour
     cp.add( theInput );                             //  Add to canvas
     
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font 
-    theOutput.setBackground(new java.awt.Color(255, 246, 227));
+    theOutput.setBackground(new java.awt.Color(255, 246, 227)); // Changing the colour
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
 

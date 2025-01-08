@@ -71,7 +71,7 @@ public class CashierView implements Observer
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check Button
     theBtCheck.addActionListener(                   // Call back code
       e -> cont.doCheck( theInput.getText(),Integer.parseInt(theAmount.getText())) );
-    theBtCheck.setForeground(Color.red);	
+    theBtCheck.setForeground(Color.red);			// Changing the text colour
     cp.add( theBtCheck );                           //  Add to canvas
 
     theBtBuy.setBounds( 16, 25+60*1, 80, 40 );      // Buy button 
@@ -88,7 +88,7 @@ public class CashierView implements Observer
     theBtBought.setBounds( 16, 25+60*3, 80, 40 );   // Bought Button
     theBtBought.addActionListener(                  // Call back code
       e -> cont.doBought() );
-    theBtBought.setForeground(Color.orange);
+    theBtBought.setForeground(Color.orange);		//Changing the text colour
     cp.add( theBtBought );                          //  Add to canvas
 
     theAction.setBounds( 110, 25, 600, 20 );       // Message area
@@ -97,19 +97,19 @@ public class CashierView implements Observer
 
     theInput.setBounds( 110, 50, 170, 40 );         // Input Area
     theInput.setText("");                           // Blank
-    theInput.setBackground(new java.awt.Color(178, 255, 202));
+    theInput.setBackground(new java.awt.Color(178, 255, 202)); // Changing the colour
     cp.add( theInput );                             //  Add to canvas
 
     theAmount.setBounds( 300, 50, 80, 40 );         // Input Area
     theAmount.setText("Quantity");                           // Blank
-    theAmount.setBackground(new java.awt.Color(178, 255, 202));
+    theAmount.setBackground(new java.awt.Color(178, 255, 202)); // Changing the colour
     theAmount.setForeground(Color.gray);
     cp.add( theAmount );
     
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font
-    theOutput.setBackground(new java.awt.Color(178, 255, 202));
+    theOutput.setBackground(new java.awt.Color(178, 255, 202)); // Changing the colour
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible

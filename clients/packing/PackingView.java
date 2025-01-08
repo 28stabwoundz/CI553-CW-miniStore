@@ -50,7 +50,7 @@ public class PackingView implements Observer
     Container cp         = rpc.getContentPane();    // Content Pane
     Container rootWindow = (Container) rpc;         // Root Window
     cp.setLayout(null);                             // No layout manager
-    cp.setBackground(new java.awt.Color(253, 219, 187));
+    cp.setBackground(new java.awt.Color(253, 219, 187)); // Changing the colour
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
     
@@ -72,7 +72,7 @@ public class PackingView implements Observer
     theSP.setBounds( 110, 55, 270, 205 );           // Scrolling pane
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font 
-    theOutput.setBackground(new java.awt.Color(255, 249, 191));
+    theOutput.setBackground(new java.awt.Color(255, 249, 191)); // Changing the colour
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible
